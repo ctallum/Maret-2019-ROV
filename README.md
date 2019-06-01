@@ -1,11 +1,14 @@
 # Maret-2019-ROV
 In this Git Hub, I will try to provide all the needed code, 3d model files, and instructions needed to either build or fix the 2019 ROV. 
 
+## Contents
 I will include the following:
 
 Code
-- Rasperry Pi run files
-- Surface laptop run files
+- Rasperry Pi code
+- Surface laptop code
+- Intructions on how to set up the code
+- How to run the ROV
 
 3d models
 - Deck (both stl and pdf for printing/laser cut)
@@ -17,9 +20,8 @@ Code
 - Skids (both stl and pdf for printing/laser cut)
 - Full assembly (.f3d file format)
 
-Instructions
+Other
 - Full technical report
-- How to set up the code on the surface laptop
-- How to set up the code on the Rasperry Pi
-- How to run the ROV
 - How the internal electronics of the ROV work
+
+## Code
