@@ -31,7 +31,8 @@ On the Raspberry Pi desktop, you will need the folder titled "New". This folder 
 - http://flask.pocoo.org/docs/1.0/installation/
 - https://nanpy.github.io/
 
-On the surface computer, you will need the folder titled "Poolside". This folder contains all the code that runs on the surface. I will also include this folder with all its contents in the GitHub. The "poolside" code runs in a program called Processing. In processing, you will need to add the following libraries: G4P, Game Control Plus, and HTTP Requests for Processing. Adding these libraries is really easy. In processing, "Open Library" --> "Add library...". From here you can search up each required library and add them. I also believe that you need to install the Xbox controller drivers. 
+On the surface computer, you will need the folder titled "Poolside". This folder contains all the code that runs on the surface. I will also include this folder with all its contents in the GitHub. The "poolside" code runs in a program called Processing, so also download that. In Processing, you will need to add the following libraries: G4P, Game Control Plus, and HTTP Requests for Processing. Adding these libraries is really easy. In processing, "Open Library" --> "Add library...". From here you can search up each library and add them. I also believe that you need to install the Xbox controller drivers. 
+- https://processing.org/
 - https://github.com/360Controller/360Controller/
 
 ### Running the ROV
@@ -64,4 +65,33 @@ After you have run the Pi code, you need to run the Poolside code. To do this, o
 To get the video streaming site up, go to your web browser and type in:
 http://169.254.175.59:5000/ 
 This should open up a webpage with the live video stream. 
+
+# Electronics
+
+## Componenents
+- Rasperry Pi [buy link](https://www.amazon.com/ELEMENT-Element14-Raspberry-Pi-Motherboard/dp/B07BDR5PDW/ref=sr_1_4?crid=31RQ6DEWEKAVE&keywords=rasberry+pie+3+b%2B&qid=1559358411&s=gateway&sprefix=rasperry+%2Caps%2C137&sr=8-4)
+- Arduino Mega [buy link](https://www.amazon.com/Elegoo-EL-CB-003-ATmega2560-ATMEGA16U2-Arduino/dp/B01H4ZLZLQ/ref=sr_1_1_sspa?keywords=arduino+mega&qid=1559358446&s=gateway&sr=8-1-spons&psc=1)
+- Pololu mc33926 motor drivers (x6) [buy link](https://www.pololu.com/product/1212)
+- 12v to 5v buck step down converter (x2) [buy link](https://www.amazon.com/DROK-Electric-Converter-Step-down-Regulator/dp/B00C63TLCC?ref_=fsclp_pl_dp_2)
+- dsn-vc288 Volt Amp Meter [buy link](https://www.amazon.com/McIgIcM-Digital-Voltmeter-Ammeter-10ADetector/dp/B06XR2XKNT/ref=sr_1_1?keywords=volt+amp+display&qid=1559358294&s=gateway&sr=8-1-spell)
+- Screw terminals [buy link](https://www.amazon.com/Eowpower-Position-Terminal-Insulated-Barrier/dp/B06XKFCTSM/ref=sr_1_4?keywords=screw+terminal+8&qid=1559358236&s=electronics&sr=1-4)
+
+## What they do
+Rasperry Pi
+- This is the brains of the ROV. It handles all the inputs from the surface. The video feed also runs through the Pi.
+
+Arduino 
+- The Arduino is what is considered a "slave" to the Rasperry Pi. It only serves as an extension of the Pi. Since the Pi has limited output pins, and it needs to control 6 motor controllers and a few servos, it uses the Arduino to send out the signals. The Pi sends instructions to the arduino such as "set pin 30 to HIGH" or "set pin 6 pwm to 125". The  Arduino follows these instructions. In total, the Arduino manages 8-9 digital outputs (on or off) depending on how many servos we are running, and 6 analog outputs (pwm 0-255).
+
+Pololu Motor Drivers
+- We are using 6 motor drivers, one for each pilge pump motor. You can think of these motor drivers as a gate. They control how much voltage goes to the motors, and, as a result, their speed. They take inputs from the arduino which indicates the speed of the motors and in which direction the motors spin. 
+
+12v to 5v Converters
+- The different electronics on board require different amounts of voltage to run, some 12v and some 5v. The craft is supplied 12 volts from the surface (through the tether). The converters simply drop the 12 volts down to 5 volts for the electronic that need it. 
+
+Screw Terminals
+- Electronically, they serve no purpose. However, they make wiring a lot easier. One of the Terminals is for 12v and the other 5v. The rows alternate positive and ground. 
+
+## How to wire the ROV
+
 
