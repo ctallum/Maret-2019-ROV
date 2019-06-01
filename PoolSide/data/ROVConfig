@@ -1,0 +1,9 @@
+Control ROV
+leftStickX	Horizontal Translation	3	SLIDER	x	0	255.0	0.25
+leftStickY	Vertical Translation	3	SLIDER	y	0	255.0	0.25
+rightStickX	Rotation	3	SLIDER	rx	0	255.0	0.25
+rightStickY	Free	3	SLIDER	ry	0	255.0	0.255
+leftTrigger	Decrease Altitutde	3	SLIDER	z	0	127.0	0.0
+rightTrigger	Increase Altitude	3	SLIDER	rz	0	127.0	0.0
+leftBumper	Close Claw	1	BUTTON	4	0	0.0	0.0
+rightBumper	Open Claw	1	BUTTON	5	0	0.0	0.0
