@@ -144,5 +144,5 @@ except:
         arduino.analogWrite(motorPin[i], 0)
 """
 if __name__ == '__main__':
-        app.run(host='169.254.175.59', port=5000, debug=True, threaded=True)
+        app.run(host='0.0.0.0', port=5000, debug=True, threaded=True)
 
