@@ -127,6 +127,17 @@ The motor drivers are the most complicated it terms of power wiring. They requir
 
 All the servos run off of 5V. The red and black lines of the servo should alwasy go to the 5V bus. 
 
+The volt/amp meter is rather confusing to wire in. I will include an image below. To wire the volt/amp meter, the small black and red wires should go directly to the power lines in the tether. The small yellow wire should also go to the postive line on the tether. The big black line of the meter should also go to the ground line in the tether. The 12V power bus line should go to the positive line on the teter. Here is where it gets weird, connect the ground line of the 12V power bus to the big red line of the meter. This may look like cross-wiring, but it is fine. Just follow the diagram. 
+![diagram](http://diyprojects.eu/wp-content/uploads/2019/04/wiring-DSN-VC288-10A-100V-digital-volt-ammeter-thick-black-red-thin-black-red-yellow-wires.jpg)
 
+### Data management
+
+Connect the ethernet in the tether to the ethernet port of the Rasperry Pi
+
+Connect the Rasperry Pi to the Arduino via a USB type A to USB type B cable. This cable comes with the Arduino in the box.
+
+Connect the Arduino to the motor drivers via the two rainbow colored ribbon cables. One controls the speed of the motors, and one controlls the direction of the motors. Follow the diagram below. Idealy, there would be three cables, the last one being data feedback; however, we have never set this up in the code, and it is not particularly helpful. 
+
+[insert diagram]
 
 
