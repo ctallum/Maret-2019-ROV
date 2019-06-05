@@ -50,9 +50,9 @@ The first step in running the ROV is to run the code on the Pi. Since the Pi is 
 
 First, establish connection with the Pi. 
 ```bash
-ssh pi@169.254.175.59
+ssh pi@169.254.38.217
 ```
-169.254.175.59 is the static IP address of the Pi we have used in years past. However, if the physical Pi changes or you change the software, the IP may be different. You can always find the IP address of the Pi by typing "ifconfig" into the Pi terminal. You can also change the physical IP adress of the Pi by edditing the dhcpcd.conf file (see the link below). (Also see above).
+169.254.38.217 is the static IP address of the Pi we have used in years past. However, if the physical Pi changes or you change the software, the IP may be different. You can always find the IP address of the Pi by typing "ifconfig" into the Pi terminal. You can also change the physical IP adress of the Pi by edditing the dhcpcd.conf file (see the link below). (Also see above).
 - https://www.modmypi.com/blog/how-to-give-your-raspberry-pi-a-static-ip-address-update
 
 Once you have connected to the Pi, it will request a password. On a new Pi, the default password is "raspberry". However, if Chris L. is the one who set it up, the password will probably be "hi".
@@ -140,4 +140,15 @@ Connect the Arduino to the motor drivers via the two rainbow colored ribbon cabl
 
 [insert diagram]
 
+
+# Current Issues / Things to do next year
+### Mechanics
+- Shorten the wires that go to the motors
+- Create a new camera mount that attaches to the electronics tray, not the front flange. Make sure that you can access the micro-SD card with the mount. 
+- Add the front and back circular supports for the electronics tray
+
+### Code
+- For some reason, there is one motor that runs slower than the others. It doesn't spin under low voltage, and runs slower than others at heigher voltages. My guess that it has to do with motor controller. Maybe replace it.
+- The right and left strafe are backwards. On the controller, when you move the left joystick to the left, the rov shifts right, and vice versa. This is because I rotated the motor controller protoboard 180 degrees. The drivers that used to run the left motors now run the right ones, and vice versa. To fix the issue, go into the App.py file and change around the pin order in the lists. 
+- One of the motors doesn't change direction. I think this is again due to issues in the code with the pins. 
 
