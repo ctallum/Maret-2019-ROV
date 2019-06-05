@@ -11,7 +11,7 @@ sudo nano /etc/dhcpcd.conf
 At the bottom of the config file, type the following:
 ```bash
 interface eth0
-static ip_address=169.254.175.59/24
+static ip_address=169.254.38.217/24
 ```
 This should create a static IP address on the Pi. (The IP adress doesn't need to be the one written above. If you make your own, just make sure to change the code in the Poolside.pde to reflect this). You can check everything works by typing the following into the terminal.
 ```bash
