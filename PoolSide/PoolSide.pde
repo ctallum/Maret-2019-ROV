@@ -71,7 +71,7 @@ int[] previousCValues;
 
 
 //Create the pieces of the strings to send the data(URL and values)
-String SERVER_PATH = "http://169.254.175.59:5000/";   //OLD IP: 169.254.226.122:5000
+String SERVER_PATH = "http://169.254.38.217:5000/";   //OLD IP: 169.254.175.59:5000
 String MOTOR_PATH = "motorData?";
 String CLAW_PATH = "clawData?";
 String CAM_PATH = "camData?";
